@@ -1,1 +1,1 @@
-Print("Hello world week2 ")
+print("Test main hello world:")
