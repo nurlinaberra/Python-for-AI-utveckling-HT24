@@ -2,18 +2,22 @@ import random
 
 class RockPaperScissors:
     def __init__(self):
+        # Initialiserar valen för spelet
         self.choices = ['sten', 'sax', 'påse']
 
     def get_computer_choice(self):
+        # Slumpar datorns val från listan av val
         return random.choice(self.choices)
 
     def get_player_choice(self):
+        # Tar spelarens val och säkerställer att det är giltigt
         choice = input("Välj sten, sax eller påse: ").lower()
         while choice not in self.choices:
             choice = input("Ogiltigt val. Välj sten, sax eller påse: ").lower()
         return choice
 
     def determine_winner(self, player, computer):
+        # Bestämmer vinnaren baserat på reglerna
         if player == computer:
             return "Oavgjort"
         elif (player == 'sten' and computer == 'sax') or \
@@ -24,6 +28,7 @@ class RockPaperScissors:
             return "Datorn vinner"
 
     def play_game(self):
+        # Kör spelet tills spelaren vinner eller förlorar
         while True:
             computer_choice = self.get_computer_choice()
             player_choice = self.get_player_choice()
@@ -33,4 +38,3 @@ class RockPaperScissors:
             print(result)
             if result != "Oavgjort":
                 break
-
